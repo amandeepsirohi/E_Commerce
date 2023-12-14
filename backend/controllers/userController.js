@@ -26,7 +26,12 @@ const createUser = asyncHandler(async (req, res) => {
     await newUser.save();
     createToken(res, newUser._id);
 
-    res.status(201).send("User created");
+    res.status(201).json({
+      _id: newUser._id,
+      username: newUser.username,
+      email: newUser.email,
+      isAdmin: newUser.isAdmin,
+    });
   } catch (err) {
     res.status(400).send("Invalid user data");
   }
@@ -43,11 +48,22 @@ const loginUser = asyncHandler(async (req, res) => {
 
     if (isPasswordValid) {
       createToken(res, existingUser._id);
-      res.status(201).json("logged in successfully!!");
+      res.status(201).json({
+        _id: existingUser._id,
+        username: existingUser.username,
+        email: existingUser.email,
+        isAdmin: existingUser.isAdmin,
+      });
+
+    }
+    else{
+      res.status(404);
+    throw new Error("Wrong password");
     }
     return;
   }
-  res.status(400).json("Wrong credentials");
+  res.status(404);
+    throw new Error("User not found");
 });
 
 //logout as  a user
