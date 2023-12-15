@@ -41,7 +41,7 @@ const Profile = () => {
     <div className="container mx-auto p-4 mt-[10rem]">
       <div className="flex justify-center align-center md:flex md:space-x-4">
         <div className="md:w-1/3">
-          <h2 className="text-2xl font-semibold mb-7 text-white">
+          <h2 className="text-3xl font-semibold mb-7 text-white">
             Update Profile
           </h2>
           <form onSubmit={submitHandler}>
