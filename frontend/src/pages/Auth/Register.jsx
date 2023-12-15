@@ -123,7 +123,7 @@ const Register = () => {
       <img
         src="https://wallpapercrafter.com/th8006/1637151-black-and-white-interior-people-coffee-shop-seating.jpg"
         alt=""
-        className="h-[60rem] w-[59%] object-cover xl:block md:hidden sm:hidden rounded-lg"
+        className="-mt-3 h-[894px] w-[867px] object-cover xl:block md:hidden sm:hidden rounded-lg"
       />
     </section>
   );

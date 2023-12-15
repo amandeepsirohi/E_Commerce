@@ -67,7 +67,7 @@ const UserList = () => {
                 <th className="px-4 py-2 text-left text-white">ID</th>
                 <th className="px-4 py-2 text-left text-white">NAME</th>
                 <th className="px-4 py-2 text-left text-white">EMAIL</th>
-                <th className="px-4 py-2 text-left text-white">ADMIN</th>
+                <th className="px-4 py-2  text-left text-white">ADMIN</th>
               </tr>
             </thead>
             <tbody>
