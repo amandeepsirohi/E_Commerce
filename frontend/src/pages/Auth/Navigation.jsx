@@ -11,7 +11,10 @@ import { LuLogIn } from "react-icons/lu";
 import { FaHeart } from "react-icons/fa";
 
 import { useSelector, useDispatch } from "react-redux";
-import { useLoginMutation , useLogoutMutation } from "../../redux/api/usersApiSlice";
+import {
+  useLoginMutation,
+  useLogoutMutation,
+} from "../../redux/api/usersApiSlice";
 import { logout } from "../../redux/features/auth/authSlice";
 
 const Navigation = () => {
@@ -108,11 +111,18 @@ const Navigation = () => {
         </button>
         {dropdownOpen && userInfo && (
           <ul
-            className={`absolute right-0 mt-2 mr-[120px] space-y-2  text-gray-100 rounded-sm bg-[#1B1B1B] ${
+            className={`absolute -right-[50px] -mt-[29px] mr-[120px] space-y-2  text-gray-100 rounded-sm bg-[#1B1B1B] ${
               !userInfo.isAdmin ? "-top-[100px]" : "-top-[300px] mr-[90px]"
             }`}>
             {userInfo.isAdmin && (
               <>
+                <li>
+                  <Link
+                    to="/admin/dashboard"
+                    className="block px-4 py-2 hover:bg-[#2b2b2b]">
+                    Dashboard
+                  </Link>
+                </li>
                 <li>
                   <Link
                     to="/admin/productlist"
@@ -141,24 +151,23 @@ const Navigation = () => {
                     Users
                   </Link>
                 </li>
-                
               </>
             )}
             <li>
-                  <Link
-                    to="/profile"
-                    className="block px-4 py-2 hover:bg-[#2b2b2b]">
-                    Profile
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/logout"
-                    className="block px-4 py-2 hover:bg-[#2b2b2b]"
-                    onClick={logoutHandler}>
-                    Logout
-                  </Link>
-                </li>
+              <Link
+                to="/profile"
+                className="block px-4 py-2 hover:bg-[#2b2b2b]">
+                Profile
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/logout"
+                className="block px-4 py-2 hover:bg-[#2b2b2b]"
+                onClick={logoutHandler}>
+                Logout
+              </Link>
+            </li>
           </ul>
         )}
       </div>
