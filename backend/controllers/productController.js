@@ -51,7 +51,7 @@ const updateProductDetails = asyncHandler(async (req, res) => {
       { ...req.fields },
       { new: true }
     );
-    await product.save();
+    await product?.save();
     res.json(product);
   } catch (error) {
     console.log(error);
