@@ -14,7 +14,7 @@ const Home = () => {
       <span className=" -mt-3 p-0 flex justify-center mb-4 items-center text-[25px] h-[30px] bg-red-700  color-white">
         {" "}
         Big Billion days sale is finally here!!
-        <img className="ml-2 " width="30" height="30" src="https://img.icons8.com/ios/50/FFFFFF/discount--v1.png" alt="discount--v1"/>
+        <img className="ml-2 " width="30" height="30" src="https://img.icons8.com/ios/50/FFEA00/discount--v1.png" alt="discount--v1"/>
       </span>
 
       
@@ -34,7 +34,7 @@ const Home = () => {
             </h1>
             <Link
               to="/shop"
-              className="bg-pink-600 font-bold rounded-full py-2 px-10 mr-[15rem] mt-[10rem]">
+              className="bg-[#ff1493] font-bold rounded-full py-2 px-10 mr-[15rem] mt-[10rem]">
               Shop
             </Link>
           </div>

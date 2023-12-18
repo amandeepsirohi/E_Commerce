@@ -69,7 +69,7 @@ const ProductTabs = ({
                     required
                     value={rating}
                     onChange={(e) => setRating(e.target.value)}
-                    className="p-2 border rounded-lg xl:w-[40rem] text-white bg-black">
+                    className="p-2 border rounded-lg xl:w-[40rem] text-white bg-[#262626] ">
                     <option value="">Select</option>
                     <option value="1">Inferior</option>
                     <option value="2">Decent</option>
@@ -90,12 +90,12 @@ const ProductTabs = ({
                     required
                     value={comment}
                     onChange={(e) => setComment(e.target.value)}
-                    className="p-2 border rounded-lg xl:w-[40rem] text-white bg-black"></textarea>
+                    className="p-2 border rounded-lg xl:w-[40rem] text-white bg-[#262626] "></textarea>
                 </div>
                 <button
                   type="submit"
                   disabled={loadingProductReview}
-                  className="bg-pink-600 text-white py-2 px-4 rounded-lg">
+                  className="bg-[#ff1493] text-white py-2 px-4 rounded-lg">
                   Submit
                 </button>
               </form>
@@ -111,7 +111,7 @@ const ProductTabs = ({
       <section>
         {activeTab === 2 && (
           <>
-            <div>{product.reviews.length === 0 && <p>No Reviews</p>}</div>
+            <div className="mt-4">{product.reviews.length === 0 && <p>No Reviews</p>}</div>
 
             <div>
               {product.reviews.map((review) => (

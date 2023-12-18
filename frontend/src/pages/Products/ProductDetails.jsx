@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
+import { IoMdArrowRoundBack } from "react-icons/io";
 import {
   useGetProductDetailsQuery,
   useCreateReviewMutation,
@@ -70,7 +71,7 @@ const ProductDetails = () => {
           to="/"
           className="text-white font-semibold hover:underline ml-[10rem]"
         >
-          Go Back
+          Go Back <IoMdArrowRoundBack className="ml-[138px] -mt-[20px]"/>
         </Link>
       </div>
 
@@ -87,15 +88,15 @@ const ProductDetails = () => {
               <img
                 src={product.image}
                 alt={product.name}
-                className="w-full xl:w-[50rem] lg:w-[45rem] md:w-[30rem] sm:w-[20rem] mr-[2rem]"
+                className="w-full xl:w-[50rem] lg:w-[45rem] md:w-[30rem] sm:w-[20rem] mr-[2rem] rounded-lg shadow-[0_35px_60px_-15px_rgba(128,128,128,0.4)] "
               />
 
-              <HeartIcon product={product} />
+              <HeartIcon  product={product} />
             </div>
 
             <div className="flex flex-col justify-between">
-              <h2 className="text-2xl font-semibold">{product.name}</h2>
-              <p className="my-4 xl:w-[35rem] lg:w-[35rem] md:w-[30rem] text-[#B0B0B0]">
+              <h2 className="text-[39px] font-semibold">{product.name}</h2>
+              <p className="my-4 xl:w-[35rem] text-[17px] lg:w-[35rem] md:w-[30rem] text-[#B0B0B0] -mt-10">
                 {product.description}
               </p>
 
@@ -112,7 +113,7 @@ const ProductDetails = () => {
                     {moment(product.createAt).fromNow()}
                   </h1>
                   <h1 className="flex items-center mb-6">
-                    <FaStar className="mr-2 text-white" /> Reviews:{" "}
+                    <FaStar className="mr-2 text-white" /> Reviews: {" "}
                     {product.numReviews}
                   </h1>
                 </div>
@@ -135,7 +136,7 @@ const ProductDetails = () => {
               <div className="flex justify-between flex-wrap">
                 <Ratings
                   value={product.rating}
-                  text={`${product.numReviews} reviews`}
+                  text={`${product.numReviews}   reviews`}
                 />
 
                 {product.countInStock > 0 && (
@@ -143,7 +144,7 @@ const ProductDetails = () => {
                     <select
                       value={qty}
                       onChange={(e) => setQty(e.target.value)}
-                      className="p-2 w-[6rem] rounded-lg text-white bg-black"
+                      className="p-2 w-[6rem] rounded-lg text-white bg-[#262626] "
                     >
                       {[...Array(product.countInStock).keys()].map((x) => (
                         <option key={x + 1} value={x + 1}>
@@ -159,7 +160,7 @@ const ProductDetails = () => {
                 <button
                   // onClick={addToCartHandler}
                   disabled={product.countInStock === 0}
-                  className="bg-pink-600 text-white py-2 px-4 rounded-lg mt-4 md:mt-0"
+                  className="bg-[#ff1493] text-white py-2 px-4 rounded-lg mt-4 md:mt-0"
                 >
                   Add To Cart
                 </button>

@@ -8,15 +8,15 @@ const Ratings = ({ value, text, color }) => {
   return (
     <div className="flex items-center">
       {[...Array(fullStars)].map((_, index) => (
-        <FaStar key={index} className={`text-${color} ml-1`} />
+        <FaStar key={index} className={`text-yellow-300 ml-1`} />
       ))}
 
-      {halfStars === 1 && <FaStarHalfAlt className={`text-${color} ml-1`} />}
+      {halfStars === 1 && <FaStarHalfAlt className={`text-yellow-300 ml-1`} />}
       {[...Array(emptyStar)].map((_, index) => (
-        <FaRegStar key={index} className={`text-${color} ml-1`} />
+        <FaRegStar key={index} className={`text-white ml-1`} />
       ))}
 
-      <span className={`rating-text ml-{2rem} text-${color}`}>
+      <span className={`rating-text ml-{2rem} text-white ml-[5px]`}>
         {text && text}
       </span>
     </div>
