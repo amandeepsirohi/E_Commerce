@@ -121,9 +121,10 @@ const Navigation = () => {
           )}
         </button>
         {dropdownOpen && userInfo && (
-          <ul
+          <ul 
+            id="hello"
             className={`absolute -right-[50px] -mt-[29px] mr-[120px] space-y-2  text-gray-100 rounded-sm bg-[#1B1B1B] ${
-              !userInfo.isAdmin ? "-top-[100px]" : "-top-[300px] mr-[90px]"
+              !userInfo.isAdmin ? "-top-[60px] mr-[160px]" : "-top-[300px] mr-[90px]"
             }`}>
             {userInfo.isAdmin && (
               <>
