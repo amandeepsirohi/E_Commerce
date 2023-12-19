@@ -81,13 +81,13 @@ export const productApiSlice = apiSlice.injectEndpoints({
       keepUnusedDataFor: 5,
     }),
 
-    // getFilteredProducts: builder.query({
-    //   query: ({ checked, radio }) => ({
-    //     url: `${PRODUCT_URL}/filtered-products`,
-    //     method: "POST",
-    //     body: { checked, radio },
-    //   }),
-    // }),
+    getFilteredProducts: builder.query({
+      query: ({ checked, radio }) => ({
+        url: `${PRODUCT_URL}/filtered-products`,
+        method: "POST",
+        body: { checked, radio },
+      }),
+    }),
   }),
 });
 
@@ -103,5 +103,5 @@ export const {
   useGetTopProductsQuery,
   useGetNewProductsQuery,
   useUploadProductImageMutation,
-//   useGetFilteredProductsQuery,
+  useGetFilteredProductsQuery,
 } = productApiSlice;
